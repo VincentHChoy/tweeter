@@ -1,0 +1,26 @@
+.banner {
+  display: flex;
+  background-color: #4056A1;
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.tweeter-text {
+  float: left;
+  font-size: 40px;
+  margin-left: 1.5em;
+  color: #fff;
+}
+
+.new-tweet {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-flow: column wrap;
+  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #fff;
+  margin-right: 1.5em;
+}
