@@ -1,5 +1,12 @@
-.header{
-  color: aquamarine;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
   height: 400px;
   width: 100%;
 }
