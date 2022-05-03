@@ -1,0 +1,40 @@
+.new-tweet {
+  color: #545149;
+}
+
+.tweet-input {
+  width: 100%;
+  background-color: transparent;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: 5px solid grey
+}
+
+.tweet-input:focus {
+  outline: none;
+}
+
+.tweet-box {
+  display: flex;
+  font-family: 'Bungee', cursive;
+  margin-top: 1em;
+  justify-content: space-between;
+}
+
+.tweet-button {
+  font-family: 'Bungee', cursive;
+  font-size: medium;
+  color: #f4f1ec;
+  background-color: #4056A1;
+  border-color: grey;
+
+}
+
+.tweet-form {
+  width: 100%;
+}
+
+/* .counter {
+  color: ;
+} */

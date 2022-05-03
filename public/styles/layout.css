@@ -37,24 +37,7 @@ body {
 
 }
 
-.tweet-input {
-  width: 100%;
-  background-color: transparent;
-  border-top: transparent;
-  border-left: transparent;
-  border-right: transparent;
-  border-bottom: 5px solid grey
-}
 
-
-.tweet-button {
-  font-family: 'Bungee', cursive;
-  font-size: medium;
-  color: #f4f1ec;
-  background-color: #4056A1;
-  border-color: grey;
-
-}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
