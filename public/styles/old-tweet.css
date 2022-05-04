@@ -24,6 +24,10 @@
   width: 8%;
 }
 
+.handle {
+  color: #b1bfd8;
+}
+
 .tweet {
   display: flex;
   margin: 1em;
@@ -38,20 +42,19 @@
   margin: 1em;
   height: 2em;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 }
 
 
 .icons {
   display: flex;
   width: 8%;
-  margin-top: 1em;
   font-size: 1em;
   justify-content: space-evenly;
+  align-items: center;
   color: #4056A1;
 }
 
 .fa-solid:hover {
   color: yellow;
 }
-
