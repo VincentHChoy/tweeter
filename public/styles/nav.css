@@ -1,26 +1,33 @@
-.banner {
+.navbar-top {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #4056A1;
   height: 120px;
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
 
 }
 
-.tweeter-text {
+.navbar-brand {
+  font-family: 'Bungee', cursive;
   font-size: 40px;
   margin-left: 1.5em;
   color: #fff;
 }
 
-.nav-new-tweet {
-  align-items: center;
-  justify-content: space-between;
+.navbar-menu {
   display: flex;
-  flex-flow: column wrap;
-  font-weight: 300;
-  font-family: 'Source Sans Pro', sans-serif;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   color: #fff;
-  margin-right: 1.5em;
+  padding: 0 1.5em;
+}
+
+.navbar-menu i{
+  color: red;
+  margin-top: -20px;
 }

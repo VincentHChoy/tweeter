@@ -16,9 +16,6 @@ html {
  * Global layout stuff
  */
 
-nav {
-  font-family: 'Bungee', cursive;
-}
 
 body {
   display: flex;
@@ -28,13 +25,6 @@ body {
   background-color: #fff;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-}
-
-.tweeter-main {
-  margin: 1em;
-  width: 90%;
-  background-color: #fff;
-
 }
 
 

@@ -1,15 +1,23 @@
-.old-tweet {
+.main-tweeter {
+  margin: 1em auto;
+  width: 90%;
+  background-color: #fff;
+
+}
+
+.main-tweet {
   display: flex;
   flex-direction: column;
   border: 5px solid grey;
+  margin: 1em;
 }
 
-.old-tweet:hover {
+.main-tweet:hover {
   box-shadow: 5px 10px;
 
 }
 
-.old-tweet-head {
+.main-tweet-head {
   display: flex;
   margin: 1em;
   height: 2em;
@@ -18,14 +26,18 @@
 }
 
 .username {
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  width: 8%;
+  align-items: center;
+
+}
+
+.username img {
+  max-width: 48px;
+  margin: 0 0.5em;
 }
 
 .handle {
-  color: #b1bfd8;
+  color: #808080;
 }
 
 .tweet {
@@ -34,7 +46,8 @@
 
 }
 
-.old-tweet-footer {
+
+.main-tweet-footer {
   display: flex;
   font-size: 0.75em;
   padding-top: 0.25em;

@@ -5,8 +5,19 @@
   flex-direction: column;
   background-color: #fff;
   background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
+  margin-top: 120px;
   height: 400px;
   width: 100%;
+}
+
+.header-image{
+  max-width: 200px;
+}
+
+.header-image img{
+  width: 100%;
+}
+
+.header-username{
+  font-size: 1.5em;
 }

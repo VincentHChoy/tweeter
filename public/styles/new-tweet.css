@@ -16,17 +16,16 @@
   outline: none;
 }
 
-.tweet-box {
+.new-tweet-footer {
   display: flex;
-  font-family: 'Bungee', cursive;
   margin-top: 1em;
   justify-content: space-between;
+  font-family: 'Bungee', cursive;
 }
 
 .tweet-button {
-  font-family: 'Bungee', cursive;
   font-size: medium;
-  color: #f4f1ec;
+  color: #fff;
   background-color: #4056A1;
   border-color: grey;
 

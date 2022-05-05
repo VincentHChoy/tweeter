@@ -1,109 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      type="text/css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- Font imports -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font imports -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@600&display=swap&family=Source+Sans+Pro:wght@900&display=swap""
     rel=" stylesheet">
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" />
-    <link rel="stylesheet" href="/styles/header.css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" />
-    <link rel="stylesheet" href="/styles/old-tweet.css" />
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script
-      type="text/javascript"
-      src="/scripts/composer-char-counter.js"
-    ></script>
-  </head>
+  <!-- App JS -->
+  <script defer type="text/javascript" src="/scripts/client.js"></script>
+  <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav class="banner">
-      <span class="tweeter-text">tweeter</span>
-      <div class="nav-new-tweet">
-        <span> <span style="font-weight: 900">Write</span> a new tweet</span>
-        <i class="fa-solid fa-angles-down" style="color: red"></i>
-      </div>
-    </nav>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav class="navbar-top">
+    <span class="navbar-brand">tweeter</span>
+    <div class="navbar-menu">
+      <p><strong>Write</strong> a new tweet</p>
+      <i class="fa-solid fa-angles-down"></i>
+    </div>
+  </nav>
 
-    <header class="header">
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div>
-        <h2>Amy <span style="font-weight: normal">Mansell</span></h2>
-      </div>
-    </header>
+  <!-- Header - profile picture and name -->
+  <header class="header">
+    <div class="header-image">
+      <img src="/images/profile-hex.png" />
+    </div>
+    <p class="header-username"><strong>Vincent </strong>Choy</p>
+  </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="tweeter-main">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form class="tweet-form" action="/tweets" method="POST">
-          <textarea
-            class="tweet-input"
-            type="text"
-            id="tweet-composer"
-            name="text"
-            placeholder="What are you humming about?"
-          ></textarea>
-          <div class="tweet-box">
-            <button class="tweet-button" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
+  <!-- Page-specific (main) content here -->
+  <main class="main-tweeter">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form class="tweet-form" action="/tweets" method="POST">
+        <textarea class="tweet-input" type="text" id="tweet-composer" name="text"
+          placeholder="What are you humming about?"></textarea>
+        <div class="new-tweet-footer">
+          <button class="tweet-button" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
 
-      <section>
-        <article class="old-tweet">
-          <header class="old-tweet-head">
-            <div class="username">
-              <img src="/images/profile-hex.png" />
-              <span> Newton </span>
-            </div>
-            <span class="handle"> @SirIssac</span>
-          </header>
-          <p class="tweet">
-            If I have seen further it is by standing on the shoulders of giants.
-          </p>
-          <footer class="old-tweet-footer">
-            <span> 10 days ago </span>
-            <div class="icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
-      </section>
-    </main>
-  </body>
+    <section id="tweets-container"></section>
+    
+  </main>
+</body>
+
 </html>
