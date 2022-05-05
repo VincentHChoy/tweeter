@@ -1,45 +1,15 @@
 // const { render } = require("express/lib/response");
+$(document).ready(function () {
 
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-$(document).ready( function(){
-  const tweetData = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png",
-        handle: "@SirIsaac",
-      },
-      content: {
-        text: "If I have seen further it is by standing on the shoulders of giants",
-      },
-      created_at: 1651711568008,
-    },
-    {
-      user: {
-        name: "Descartes",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@rd",
-      },
-      content: {
-        text: "Je pense , donc je suis",
-      },
-      created_at: 1461113959088,
-    },
-  ];
+  const daysAgo = function (oldDate) {
+    return Math.ceil((Date.now() - oldDate) / 86400000);
+  };
 
-const daysAgo = function (oldDate) {
-  return Math.ceil((Date.now() - oldDate) / 86400000);
-};
-
-//creates the html template with personalized user data
-const createTweetElement = function (data) {
-  const user = data.user;
-  const date = daysAgo(data.created_at);
-  const markup = `
+  //creates the html template with personalized user data
+  const createTweetElement = function (data) {
+    const user = data.user;
+    const date = daysAgo(data.created_at);
+    const markup = `
           <article class="main-tweet">
           <header class="main-tweet-head">
             <div class="username">
@@ -60,16 +30,24 @@ const createTweetElement = function (data) {
             </div>
           </footer>
         </article>`;
-  return markup;
-};
+    return markup;
+  };
 
-//appends to html from tweet database
-const renderTweets = function (database){
-  for (const user of database) {
-    $("#tweets-container").append(createTweetElement(user));
-  }
-}
+  //appends to html from tweet database
+  const renderTweets = function (database) {
+    for (const user of database) {
+      $("#tweets-container").append(createTweetElement(user));
+    }
+  };
 
-renderTweets(tweetData);
+  renderTweets(tweetData);
 
-})
+  $(".tweet-form").submit(function (event) {
+    event.preventDefault();
+    $.post(
+      "/tweets",
+      $(this).serialize()
+    );
+  });
+
+});
