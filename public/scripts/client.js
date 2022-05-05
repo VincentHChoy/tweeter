@@ -1,14 +1,9 @@
 // const { render } = require("express/lib/response");
 $(document).ready(function () {
-
-  const daysAgo = function (oldDate) {
-    return Math.ceil((Date.now() - oldDate) / 86400000);
-  };
-
   //creates the html template with personalized user data
   const createTweetElement = function (data) {
     const user = data.user;
-    const date = daysAgo(data.created_at);
+    const date = timeago.format(data.created_at);
     const markup = `
           <article class="main-tweet">
           <header class="main-tweet-head">
@@ -22,7 +17,7 @@ $(document).ready(function () {
             ${data.content.text}
           </p>
           <footer class="main-tweet-footer">
-            <span> ${date} day(s) ago </span>
+            <span> ${date}</span>
             <div class="icons">
               <i class="fa-solid fa-flag"></i>
               <i class="fa-solid fa-retweet"></i>
@@ -40,14 +35,15 @@ $(document).ready(function () {
     }
   };
 
-  renderTweets(tweetData);
-
   $(".tweet-form").submit(function (event) {
     event.preventDefault();
-    $.post(
-      "/tweets",
-      $(this).serialize()
-    );
+    $.post("/tweets", $(this).serialize());
   });
 
+  const loadTweets = function () {
+    $.ajax("/tweets", { method: "GET" }).then(function (tweets) {
+      renderTweets(tweets);
+    });
+  };
+  loadTweets();
 });
