@@ -28,6 +28,16 @@ $(document).ready(function () {
     return markup;
   };
 
+  const isValid = function(text){
+    let valid = false;
+    text = text.split('=')[1]
+    valid = text.length < 140 ? true : false
+    valid = text.length > 0 ? true : false 
+    valid = text === null ? false : valid
+    valid = text === undefined ? true : valid;
+    return valid
+  }
+
   //appends to html from tweet database
   const renderTweets = function (database) {
     for (const user of database) {
@@ -35,15 +45,25 @@ $(document).ready(function () {
     }
   };
 
+  //submits it to the database
   $(".tweet-form").submit(function (event) {
+    const serialized = $(this).serialize();
     event.preventDefault();
-    $.post("/tweets", $(this).serialize());
+    // console.log(isValid(serialized))
+    if (!isValid(serialized)) {
+      alert("invalid input");
+    }
+    $.post("/tweets", serialized);
+    // $("#tweets-container").load("/tweets");
   });
+
 
   const loadTweets = function () {
     $.ajax("/tweets", { method: "GET" }).then(function (tweets) {
       renderTweets(tweets);
     });
   };
+
+  //loads the tweets onto the page without redirecting
   loadTweets();
 });

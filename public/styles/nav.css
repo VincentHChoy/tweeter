@@ -27,7 +27,11 @@
   padding: 0 1.5em;
 }
 
-.navbar-menu i{
+.navbar-menu i {
   color: red;
   margin-top: -20px;
+}
+
+main textarea {
+  resize: none;
 }
