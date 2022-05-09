@@ -8,7 +8,7 @@
   background-color: transparent;
   border: transparent;
   border-bottom: 5px solid grey;
-
+  color: #545149;
 }
 
 .tweet-input:focus {
@@ -33,6 +33,7 @@
 .tweet-form {
   width: 100%;
 }
+
 
 /* .counter {
   color: ;

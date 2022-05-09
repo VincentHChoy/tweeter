@@ -28,35 +28,38 @@ $(document).ready(function () {
     return markup;
   };
 
-  const isValid = function(text){
+  const isValid = function (text) {
     let valid = false;
-    text = text.split('=')[1]
-    valid = text.length < 140 ? true : false
-    valid = text.length > 0 ? true : false 
-    valid = text === null ? false : valid
+    text = text.split("=")[1];
+    valid = text.length < 140 ? true : false;
+    valid = text.length > 0 ? true : false;
+    valid = text === null ? false : valid;
     valid = text === undefined ? true : valid;
-    return valid
-  }
+    return valid;
+  };
 
   //appends to html from tweet database
   const renderTweets = function (database) {
-    for (const user of database) {
+    for (const user of database.reverse()) {
       $("#tweets-container").append(createTweetElement(user));
     }
   };
 
-  //submits it to the database
+  //sends text it to the database post route
   $(".tweet-form").submit(function (event) {
-    const serialized = $(this).serialize();
+    let serialized = $(this).serialize();
     event.preventDefault();
-    // console.log(isValid(serialized))
     if (!isValid(serialized)) {
       alert("invalid input");
     }
-    $.post("/tweets", serialized);
-    // $("#tweets-container").load("/tweets");
+    $.post("/tweets", serialized,() => {
+      $.get("/tweets")
+      .then((data) => {
+        $("#tweets-container").prepend(createTweetElement(data.slice(-1)[0]));
+        $("#tweet-composer").val("");
+      });
+    })
   });
-
 
   const loadTweets = function () {
     $.ajax("/tweets", { method: "GET" }).then(function (tweets) {
