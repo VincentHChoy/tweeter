@@ -46,6 +46,11 @@
 
 }
 
+.error{
+  border: 3px solid red;
+  color: red;
+  padding: 1em;
+}
 
 .main-tweet-footer {
   display: flex;
