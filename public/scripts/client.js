@@ -43,7 +43,7 @@ $(document).ready(function () {
     let valid = true;
     newText = text.split("=")[1];
     let message = "";
-    console.log('newText',newText)
+    console.log("newText", newText);
     if (newText.length > 140) {
       message = "maximum 140 characters";
       valid = false;
@@ -74,7 +74,7 @@ $(document).ready(function () {
     event.preventDefault();
     const validation = isValid(serialized);
     if (!validation.valid) {
-      console.log(validation.message)
+      console.log(validation.message);
       $(".error").text(validation.message).then($(".error").slideDown());
     } else {
       $.post("/tweets", serialized, () => {
@@ -94,4 +94,26 @@ $(document).ready(function () {
 
   //loads the tweets onto the page without redirecting
   loadTweets();
+
+  /*--Navbar Toggle--*/
+  $(".navbar-menu").click(function () {
+    $(".new-tweet").slideToggle();
+    $(".tweet-input").focus();
+  });
+
+  /*--event handler for handling scrolling--*/
+
+  $(window).scroll(function () {
+    console.log($(this).scrollTop());
+    if ($(this).scrollTop()) {
+      $(".toTop").fadeIn();
+    } else {
+      $(".toTop").fadeOut();
+    }
+  });
+
+  /*--animates going to the top of the screen on click--*/
+  $(".toTop").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+  });
 });

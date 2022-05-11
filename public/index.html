@@ -56,8 +56,8 @@
     <nav class="navbar-top">
       <span class="navbar-brand">tweeter</span>
       <div class="navbar-menu">
-        <p><strong>Write</strong> a new tweet</p>
-        <i class="fa-solid fa-angles-down"></i>
+        <button class="btn"><p><strong>Write</strong> a new tweet</p>
+        <i class="fa-solid fa-angles-down"></i></button>
       </div>
     </nav>
 
@@ -71,8 +71,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="main-tweeter">
-      <section class="error"></section>
       <section class="new-tweet">
+        <section class="error"></section>
         <h2>Compose Tweet</h2>
         <form class="tweet-form" action="/tweets" method="POST">
           <textarea
@@ -88,9 +88,9 @@
           </div>
         </form>
       </section>
-
       <section id="tweets-container"></section>
     </main>
+    <div class='toTop'><i class="fa-solid fa-angles-up"></i></div>
   </body>
   
 </html>
