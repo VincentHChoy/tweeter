@@ -38,9 +38,8 @@ export const createTweetElement = function (data) {
 //validation of text area
 export const isValid = function (text) {
   let valid = true;
-  newText = text.split("=")[1];
+  let newText = text.split("=")[1];
   let message = "";
-  console.log("newText", newText);
   if (newText.length > 140) {
     message = "maximum 140 characters";
     valid = false;

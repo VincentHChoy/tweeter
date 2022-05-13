@@ -28,6 +28,9 @@ $(document).ready(function () {
   //hides initial error container
   $(".error").hide();
 
+  //hides inital compose tweet container
+  $(".new-tweet").hide();
+
   /*--Navbar Toggle, click event handler--*/
   $(".navbar-menu").click(function () {
     $(".new-tweet").slideToggle();
