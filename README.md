@@ -22,8 +22,14 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 <em>Desktop view</em>
+
 ![image](https://user-images.githubusercontent.com/63982069/168379837-99665c6c-2744-4eca-ba76-4620fce47c5f.png)
+
+<em>After clicking the "Write new Tweet" icon</em>
+
+![image](https://user-images.githubusercontent.com/63982069/168381217-06b3ec8b-adaa-4fe9-aad5-881a5fbcc8e2.png)
 
 <em>Mobile view</em>
 
 ![image](https://user-images.githubusercontent.com/63982069/168380073-9201aad0-1eba-48ed-8a66-832f4c81679f.png)
+
