@@ -1,12 +1,12 @@
 // const { render } = require("express/lib/response");
-$(document).ready(function () {
+$(document).ready(function() {
   //creates the html template with personalized user data
-  const createTweetElement = function (data) {
+  const createTweetElement = function(data) {
     const user = data.user;
     const date = timeago.format(data.created_at);
 
     //escape HTML characters
-    const escape = function (str) {
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
@@ -39,7 +39,8 @@ $(document).ready(function () {
     return markup;
   };
 
-  const isValid = function (text) {
+  //validation of text area
+  const isValid = function(text) {
     let valid = true;
     newText = text.split("=")[1];
     let message = "";
@@ -60,15 +61,15 @@ $(document).ready(function () {
     return { valid, message };
   };
 
-  //appends to html from tweet database
-  const renderTweets = function (database) {
+  //appends to html container from tweet database
+  const renderTweets = function(database) {
     for (const user of database.reverse()) {
       $("#tweets-container").append(createTweetElement(user));
     }
   };
 
-  //sends text it to the database post route
-  $(".tweet-form").submit(function (event) {
+  //sends text it to the database post route, submit event handler
+  $(".tweet-form").submit(function(event) {
     $(".error").slideUp();
     let serialized = $(this).serialize();
     event.preventDefault();
@@ -86,25 +87,25 @@ $(document).ready(function () {
     }
   });
 
-  const loadTweets = function () {
-    $.ajax("/tweets", { method: "GET" }).then(function (tweets) {
+  const loadTweets = function() {
+    $.ajax("/tweets", { method: "GET" }).then(function(tweets) {
       renderTweets(tweets);
     });
   };
 
   //loads the tweets onto the page without redirecting
   loadTweets();
+  $(".error").hide();
 
   /*--Navbar Toggle--*/
-  $(".navbar-menu").click(function () {
+  $(".navbar-menu").click(function() {
     $(".new-tweet").slideToggle();
     $(".tweet-input").focus();
   });
 
   /*--event handler for handling scrolling--*/
 
-  $(window).scroll(function () {
-    console.log($(this).scrollTop());
+  $(window).scroll(function() {
     if ($(this).scrollTop()) {
       $(".toTop").fadeIn();
     } else {
@@ -112,8 +113,10 @@ $(document).ready(function () {
     }
   });
 
+  
+
   /*--animates going to the top of the screen on click--*/
-  $(".toTop").click(function () {
+  $(".toTop").click(function() {
     $("html, body").animate({ scrollTop: 0 }, 1000);
   });
 });

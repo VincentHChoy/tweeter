@@ -10,14 +10,22 @@
   width: 100%;
 }
 
-.header-image{
+@media screen and (min-width: 960px) {
+  .header {
+    width: 50%;
+    margin: 140px 1em 1em 1em;
+  }
+
+}
+
+.header-image {
   max-width: 200px;
 }
 
-.header-image img{
+.header-image img {
   width: 100%;
 }
 
-.header-username{
+.header-username {
   font-size: 1.5em;
 }

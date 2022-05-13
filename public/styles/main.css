@@ -1,7 +1,23 @@
 .main-tweeter {
+  display: flex;
+  flex-direction: column;
   margin: 1em auto;
   width: 90%;
   background-color: #fff;
+  
+}
+
+@media screen and (min-width: 960px) {
+  .contents{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .main-tweeter{
+    margin: 140px;
+  }
 
 }
 
@@ -66,9 +82,9 @@
 
 .icons {
   display: flex;
-  width: 8%;
+  width: 100px;
   font-size: 1em;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   color: #4056A1;
 }

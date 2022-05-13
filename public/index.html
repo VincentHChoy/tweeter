@@ -3,6 +3,10 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
 
     <!-- External CSS -->
     <link
@@ -56,12 +60,15 @@
     <nav class="navbar-top">
       <span class="navbar-brand">tweeter</span>
       <div class="navbar-menu">
-        <button class="btn"><p><strong>Write</strong> a new tweet</p>
-        <i class="fa-solid fa-angles-down"></i></button>
+        <button class="btn">
+          <p><strong>Write</strong> a new tweet</p>
+          <i class="fa-solid fa-angles-down"></i>
+        </button>
       </div>
     </nav>
 
     <!-- Header - profile picture and name -->
+    <div class="contents">
     <header class="header">
       <div class="header-image">
         <img src="/images/profile-hex.png" />
@@ -71,26 +78,28 @@
 
     <!-- Page-specific (main) content here -->
     <main class="main-tweeter">
-      <section class="new-tweet">
-        <section class="error"></section>
-        <h2>Compose Tweet</h2>
-        <form class="tweet-form" action="/tweets" method="POST">
-          <textarea
-            class="tweet-input"
-            type="text"
-            id="tweet-composer"
-            name="text"
-            placeholder="What are you humming about?"
-          ></textarea>
-          <div class="new-tweet-footer">
-            <button class="tweet-button" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <section id="tweets-container"></section>
+        <section class="new-tweet">
+          <section class="error"></section>
+          <h2>Compose Tweet</h2>
+          <form class="tweet-form" action="/tweets" method="POST">
+            <textarea
+              class="tweet-input"
+              type="text"
+              id="tweet-composer"
+              name="text"
+              placeholder="What are you humming about?"
+            ></textarea>
+            <div class="new-tweet-footer">
+              <button class="tweet-button" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+          </form>
+        </section>
+        <section id="tweets-container"></section>
+      </div>
     </main>
-    <div class='toTop'><i class="fa-solid fa-angles-up"></i></div>
+    </div>
+    <div class="toTop"><i class="fa-solid fa-angles-up"></i></div>
   </body>
-  
 </html>

@@ -1,7 +1,7 @@
-$(document).ready(function () {
-  $('.error').hide();
+$(document).ready(function() {
 
-  const overCharErr = function(){
+
+  const overCharErr = function() {
     $(".error").slideDown();
-  }
+  };
 });

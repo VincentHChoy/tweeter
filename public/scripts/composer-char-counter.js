@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  $("#tweet-composer").on("input", function () {
+$(document).ready(function() {
+  $("#tweet-composer").on("input", function() {
     const value = $(this).val().length;
     const counter = $(this).parent().find(".counter");
     counter.val(140 - value);

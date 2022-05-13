@@ -16,7 +16,6 @@ html {
  * Global layout stuff
  */
 
-
 body {
   display: flex;
   flex-direction: column;
@@ -26,9 +25,3 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
