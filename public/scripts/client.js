@@ -7,7 +7,7 @@ $(document).ready(function () {
     $(".error").slideUp();
     let serialized = $(this).serialize();
     event.preventDefault();
-    const validation = isValid(serialized);
+    const validation = isValid($("#tweet-composer").val());
     //handles validation and error messages
     if (!validation.valid) {
       $(".error").text(validation.message).then($(".error").slideDown());
@@ -17,6 +17,7 @@ $(document).ready(function () {
           //gets last element in database
           $("#tweets-container").prepend(createTweetElement(data.slice(-1)[0]));
           $("#tweet-composer").val("");
+          $('.counter').val(140)
         });
       });
     }

@@ -38,17 +38,17 @@ export const createTweetElement = function (data) {
 //validation of text area
 export const isValid = function (text) {
   let valid = true;
-  let newText = text.split("=")[1];
+  console.log('text',text)
   let message = "";
-  if (newText.length > 140) {
+  if (text.length > 140) {
     message = "maximum 140 characters";
     valid = false;
   }
-  if (newText.length <= 0) {
+  if (text.length <= 0) {
     message = "message empty";
     valid = false;
   }
-  if (newText === null || newText === undefined) {
+  if (!text) {
     message = "undefined";
     valid = false;
   }
