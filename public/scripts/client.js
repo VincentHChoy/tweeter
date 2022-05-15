@@ -10,7 +10,10 @@ $(document).ready(function () {
     const validation = isValid($("#tweet-composer").val());
     //handles validation and error messages
     if (!validation.valid) {
-      $(".error").text(validation.message).then($(".error").slideDown());
+      console.log('message',validation.message)
+      console.log("message", typeof validation.message);
+      $(".error").text(validation.message).then($(".error").slideDown())
+      .catch(console.log('invalid input'));
     } else {
       $.post("/tweets", serialized, () => {
         $.get("/tweets").then((data) => {
@@ -18,7 +21,8 @@ $(document).ready(function () {
           $("#tweets-container").prepend(createTweetElement(data.slice(-1)[0]));
           $("#tweet-composer").val("");
           $('.counter').val(140)
-        });
+        })
+        .catch(console.log('failed to AJAX "GET"'));
       });
     }
   });

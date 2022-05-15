@@ -38,21 +38,22 @@ export const createTweetElement = function (data) {
 //validation of text area
 export const isValid = function (text) {
   let valid = true;
-  console.log('text',text)
   let message = "";
   if (text.length > 140) {
-    message = "maximum 140 characters";
+    message = "Maximum 140 characters";
     valid = false;
+    return { valid, message };
   }
   if (text.length <= 0) {
-    message = "message empty";
+    message = "Please write a tweet.";
     valid = false;
+    return { valid, message };
   }
   if (!text) {
     message = "undefined";
     valid = false;
+    return { valid, message };
   }
-
   return { valid, message };
 };
 
@@ -65,7 +66,7 @@ const renderTweets = function (database) {
 
 //ajax "get" method for fetching tweets
 export const loadTweets = function () {
-  $.ajax("/tweets", { method: "GET" }).then(function (tweets) {
+  $.get("/tweets").then(function (tweets) {
     renderTweets(tweets);
   });
 };
